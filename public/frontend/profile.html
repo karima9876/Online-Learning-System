@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.6
+Version: 1.6.0
+Purchase: https://wrapbootstrap.com/theme/beyondadmin-adminapp-angularjs-mvc-WB06R48S4
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Head -->
+<head>
+    <meta charset="utf-8" />
+    <title>Blank Page</title>
+
+    <meta name="description" content="blank page" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />  
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--Basic Styles-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/weather-icons.min.css" rel="stylesheet" />
+
+    <!--Fonts-->
+    <link href="../fonts.googleapis.com/css@family=open+sans_3a300italic,400italic,600italic,700italic,400,600,700,300.css"
+          rel="stylesheet" type="text/css">
+
+    <!--Beyond styles-->
+    <link id="beyond-link" href="assets/css/beyond.min.css" rel="stylesheet" />
+    <link href="assets/css/demo.min.css" rel="stylesheet" />
+    <link href="assets/css/typicons.min.css" rel="stylesheet" />
+    <link href="assets/css/animate.min.css" rel="stylesheet" />
+    <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+
+    <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+    <script src="assets/js/skins.min.js"></script>
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+    <!-- Loading Container -->
+    <div class="loading-container">
+        <div class="loader"></div>
+    </div>
+    <!--  /Loading Container -->
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="navbar-container">
+                <!-- Navbar Barnd -->
+                <div class="navbar-header pull-left">
+                    <a href="#" class="navbar-brand">
+                        <small>
+                            <img src="assets/img/logo.png" alt="" />
+                        </small>
+                    </a>
+                </div>
+                <!-- /Navbar Barnd -->
+                <!-- Sidebar Collapse -->
+                <div class="sidebar-collapse" id="sidebar-collapse">
+                    <i class="collapse-icon fa fa-bars"></i>
+                </div>
+                <!-- /Sidebar Collapse -->
+                <!-- Account Area and Settings --->
+                <div class="navbar-header pull-right">
+                    <div class="navbar-account">
+                        <ul class="account-area">
+                            
+                        
+                            <li>
+                                <a class="login-area dropdown-toggle" data-toggle="dropdown">
+                                    <div class="avatar" title="View your public profile">
+                                        <img src="assets/img/avatars/adam-jansen.jpg">
+                                    </div>
+                                    <section>
+                                        <h2><span class="profile"><span>Karima Jaman <i class="fa fa-angle-down"></i></span>
+                                        </span></h2>
+                                        
+                                    </section>
+                                    
+                                </a>
+                                
+                                <!--Login Area Dropdown-->
+                                <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
+                                    <li class="username username-hide-on-mobile"><a>Karima Jaman</a></li>
+                                    <!-- <li class="email"><a>karimajamn@live.com</a></li> -->
+                    
+                                                
+                                                    <li>
+                                                        <a href="profile.html"><i class="fa fa-user"></i> Profile </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="change password.html"><i class="fa fa-location-arrow"></i> Change Password </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href=""><i class="fa fa-key"></i> Log Out </a>
+                                                    </li>
+                    
+                                                </ul>
+                                                                        </li>
+                                           
+                                        </ul>
+                                    </div>
+                                
+                        
+                      
+                    </div>
+                </div>
+                <!-- /Account Area and Settings -->
+            </div>
+        </div>
+    </div>
+    <!-- /Navbar -->
+    <!-- Main Container -->
+    <div class="main-container container-fluid">
+        <!-- Page Container -->
+        <div class="page-container">
+            <!-- Page Sidebar -->
+            <div class="page-sidebar" id="sidebar">
+                <!-- Page Sidebar Header-->
+                <div class="sidebar-header-wrapper">
+                    <input type="text" class="searchinput" />
+                    <i class="searchicon fa fa-search"></i>
+                    <div class="searchhelper">Search Reports, Charts, Emails or Notifications</div>
+                </div>
+                <!-- /Page Sidebar Header -->
+                <!-- Sidebar Menu -->
+                <ul class="nav sidebar-menu">
+                    <!--Dashboard-->
+                    <li>
+                        <a href="index.html">
+                            <i class="menu-icon glyphicon glyphicon-home"></i>
+                            <span class="menu-text"> Dashboard </span>
+                        </a>
+                    </li>
+                    <!--Databoxes-->
+                    <li>
+                        <a href="ask question.html">
+                            <i class=" menu-icon glyphicon glyphicon-question-sign"></i>
+                            
+                            <span class="menu-text"> Ask Question </span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#" class="menu-dropdown">
+                            <i class="menu-icon glyphicon glyphicon-user"></i>
+                            <span class="menu-text"> Student </span>
+
+                            <i class="menu-expand"></i>
+                        </a>
+
+                        <ul class="submenu">
+                            <li>
+                                <a href="Add student.html">
+                                    <span class="menu-text">Add Student</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="studentlist.html">
+                                    <span class="menu-text">Student List</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--Tables-->
+                    <li>
+                        <a href="categorylist.html" class="menu-dropdown">
+                            <i class="menu-icon glyphicon glyphicon-tasks"></i>
+                            <span class="menu-text"> Category </span>
+
+                            <i class="menu-expand"></i>
+                        </a>
+
+                        <ul class="submenu">
+                            <li>
+                                <a href="Add category.html">
+                                    <span class="menu-text">Add Category</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="categorylist.html">
+                                    <span class="menu-text">Category List</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="rating.html">
+                            <i class=" menu-icon glyphicon glyphicon-star-empty"></i>
+                            
+                            <span class="menu-text"> Rating </span>
+                        </a>
+                    </li>
+                    
+                            
+                   
+                    <li>
+                        <a href="">
+                            <i class="menu-icon fa fa-envelope-o"></i>
+                            <span class="menu-text">Message</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="export.html">
+                            <i class="menu-icon glyphicon glyphicon-download"></i>
+                            <span class="menu-text">Export</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="primary student list.html" class="menu-dropdown">
+                            <i class="menu-icon glyphicon glyphicon-user"></i>
+                            <span class="menu-text">Primary Student </span>
+
+                            <i class="menu-expand"></i>
+                        </a>
+
+                        <ul class="submenu">
+                            <li>
+                                <a href="Add primary student.html">
+                                    <span class="menu-text">Add  Primary Student</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="primary student list.html">
+                                    <span class="menu-text">Student Primary List</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </div>
+            </div>
+            <!-- /Page Body -->
+        </div>
+    <div class="main-container container-fluid">
+        <!-- Page Container -->
+        <div class="page-container">
+            
+            <!-- Page Sidebar -->
+           
+            <!-- /Page Sidebar -->
+
+                                  
+            <!-- Page Content -->
+            
+            <div class="page-content">
+                <div class="page-breadcrumbs">
+                    <ul class="breadcrumb">
+                        <li>
+                            <i class="fa fa-home"></i>
+                            <a href="#">Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="#">Profile</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                
+                
+               
+                <div class="page-body">
+                    <!-- <div class="portlet light bordered">
+                        <div class="portlet-title">
+                            <div style="text-align: center; margin-top: 5%;" class="tools">
+                
+                
+                                <h3 style="background-color: #ff2300" class="col-md-8">This information is not changable, Please fill up with right information <span class="red"></span>  </h3>
+                
+                
+                
+                                </div>
+                            </div>
+                        </div>
+                     -->
+                            <div class="row">
+                                
+                                <div class="col-lg-12 col-sm-12 col-xs-12">
+                                    
+                                    
+                                    <div class="row">
+                                        
+                                        <div style="margin-left: 170px;margin-top: 5px;" class="col-lg-6 col-sm-6 col-xs-12">
+                                            
+                                            <div  class="widget flat radius-bordered">
+                                                
+                                                
+                                                
+                                                <div  class="widget-header bg-blue">
+                                                    
+                                                   
+                                                        <h4 style="text-align: center;padding: 6px;color: #fff;" class="card-title">karima's Profile </h4>
+                            
+                                                    
+                                                </div>
+                                                
+                                                <div class="widget-body">
+                                                    <div class="card">
+
+                                                       
+                                                        <div style="margin-top: 16px;" class="card-body">
+                                    
+                                    
+                                    
+                                                            <div style="margin-left: 9%;" class="row">
+                                    
+                                    
+                                    
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group">
+                                                                        <label style="font-size: 14px;font-weight: 600; " class="bmd-label-floating">Student Id</label>
+                                                                        <h2 style="margin-left: 5%;margin-top: 1px;    font-weight: 600; font-size: 140%;">17CSE049</h2>
+                                                                    </div>
+                                                                </div>
+                                    
+                                                            </div>
+                                                            <div style="margin-left: 9%;" class="row">
+                                    
+                                    
+                                    
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group">
+                                                                        <label style="    font-weight: 600;font-size: 14px; " class="bmd-label-floating">Email</label>
+                                                                        <h2 style="    font-weight: 600;margin-left: 5%;margin-top: 1px; font-size: 140%;">karimajaman9876@gmail.com</h2>
+                                                                    </div>
+                                                                </div>
+                                    
+                                                            </div>
+                                    
+                                                            <div style="margin-left: 9%;" class="row">
+                                    
+                                    
+                                    
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group">
+                                                                        <label style="    font-weight: 600;font-size: 14px; " class="bmd-label-floating">Name</label>
+                                                                        <h2 style="    font-weight: 600;margin-left: 5%;margin-top: 1px; font-size: 140%;">karima</h2>
+                                                                    </div>
+                                                                </div>
+                                    
+                                                            </div>
+                                    
+                                                            <div style="margin-left: 9%;" class="row">
+                                    
+                                    
+                                    
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group">
+                                                                        <label style="    font-weight: 600;font-size: 14px; " class="bmd-label-floating">Department</label>
+                                                                        <h2 style="    font-weight: 600;margin-left: 5%;margin-top: 1px; font-size: 140%;">CSE</h2>
+                                                                    </div>
+                                                                </div>
+                                    
+                                                            </div>
+                                                            <div style="margin-left: 9%;" class="row">
+                                    
+                                    
+                                    
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group">
+                                                                        <label style="    font-weight: 600;font-size: 14px; " class="bmd-label-floating">Session</label>
+                                                                        <h2 style="    font-weight: 600;margin-left: 5%;margin-top: 1px; font-size: 140%;">2017-2018</h2>
+                                                                    </div>
+                                                                </div>
+                                    
+                                                            </div>
+                                                            <div style="margin-left: 9%;" class="row">
+                                    
+                                    
+                                    
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group">
+                                                                        <label style="    font-weight: 600;font-size: 14px; " class="bmd-label-floating">Institution Name</label>
+                                                                        <h2 style="    font-weight: 600;margin-left: 5%;margin-top: 1px; font-size: 140%;">BSMRSTU</h2>
+                                                                    </div>
+                                                                </div>
+                                    
+                                                            </div>
+                                                            <div style="margin-left: 9%;" class="row">
+                                    
+                                    
+                                    
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group">
+                                                                        <label style="    font-weight: 600;font-size: 14px; " class="bmd-label-floating">Father Name</label>
+                                                                        <h2 style="    font-weight: 600;margin-left: 5%;margin-top: 1px; font-size: 140%;">Nurul Islam</h2>
+                                                                    </div>
+                                                                </div>
+                                    
+                                                            </div>
+                                    
+                                    
+                                                            <div style="margin-left: 9%;" class="row">
+                                    
+                                    
+                                    
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group">
+                                                                        <label style="    font-weight: 600;font-size: 14px; " class="bmd-label-floating">Mother Name</label>
+                                                                        <h2 style="    font-weight: 600;margin-left: 5%;margin-top: 1px; font-size: 140%;">Yasmen Begum</h2>
+                                                                    </div>
+                                                                </div>
+                                    
+                                                            </div>
+                                                            <div style="margin-left: 9%;" class="row">
+                                    
+                                    
+                                    
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group">
+                                                                        <label style="    font-weight: 600;font-size: 14px; " class="bmd-label-floating">Address</label>
+                                                                        <h2 style="    font-weight: 600;margin-left: 5%;margin-top: 1px; font-size: 140%;">Faridpur</h2>
+                                                                    </div>
+                                                                </div>
+                                    
+                                                            </div>
+                                                            <div style="margin-left: 9%;" class="row">
+                                    
+                                    
+                                    
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group">
+                                                                        <label style="    font-weight: 600;font-size: 14px; " class="bmd-label-floating">Birth Date</label>
+                                                                        <h2 style="    font-weight: 600;margin-left: 5%;margin-top: 1px; font-size: 140%;">14-02-1999</h2>
+                                                                    </div>
+                                                                </div>
+                                    
+                                                            </div>
+                                                            <div style="margin-left: 9%;" class="row">
+                                    
+                                    
+                                    
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group">
+                                                                        <label style="    font-weight: 600;font-size: 14px; " class="bmd-label-floating">Contact Number</label>
+                                                                        <h2 style="    font-weight: 600;margin-left: 5%;margin-top: 1px; font-size: 140%;">01703986069</h2>
+                                                                    </div>
+                                                                </div>
+                                    
+                                                            </div>
+                                                            <div style="margin-left: 9%;" class="row">
+                                    
+                                    
+                                    
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group">
+                                                                        <label style="    font-weight: 600;font-size: 14px; " class="bmd-label-floating">Guardian Contact Number</label>
+                                                                        <h2 style="    font-weight: 600;margin-left: 5%;margin-top: 1px; font-size: 140%;">01710229868</h2>
+                                                                    </div>
+                                                                </div>
+                                    
+                                                            </div>
+                                                            <div style="margin-left: 9%;" class="row">
+                                    
+                                    
+                                    
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group">
+                                                                        <label style="    font-weight: 600;font-size: 14px; " class="bmd-label-floating">Blood Group</label>
+                                                                        <h2 style="    font-weight: 600;margin-left: 5%;margin-top: 1px; font-size: 140%;">A+</h2>
+                                                                    </div>
+                                                                </div>
+                                    
+                                                            </div>
+                                    
+                                                        </div>
+                                                    </div>
+  
+                                                        
+                                                </div>
+
+                                    
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                       
+                            
+                                
+                               
+<!-- <div class="panel-body">
+                        
+                        <div style="margin: 0;text-align: center;float: right; " class="pictureProfile">
+                            <div style="margin-top: -350%; margin-left: -260%; " class="card card-profile">
+                                <div class="card-avatar">
+                                    <a href="#">
+                                        <img class="img" style="width: 100px;border-radius:50%;" src="https://qamurad.com/uploads/personalPhotos/603bebc55dc31.jpeg">
+                    
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-category text-gray"></h6>
+                                    
+                                    <h4 style="background: #b24ac4;" class="btn btn-primary btn-round">Rating:  0</h4>
+                                    <p class="card-description"></p>
+                    
+                                    <a href="#" style="background: #b24ac4;" class="btn btn-primary btn-round"> 0  Question </a>
+                    
+                                    <a href="#" style="background: #b24ac4;" class="btn btn-primary btn-round">0   Answer  </a>
+                                    <a href="#" style="background: #b24ac4;" class="btn btn-primary btn-round">0   Reply   </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div  class="row">
+                                
+                        <div  class="col-lg-12 col-sm-12 col-xs-12">
+                            
+                            
+                            <div class="row">
+                                
+                                <div style="margin-top: -67%; margin-left:67%;  " class="col-lg-6 col-sm-6 col-xs-12">
+                                    
+                                    <div class="widget flat radius-bordered">
+                                        
+                                        
+                                        
+                                        
+                                        
+                                            <div  style="width: 56%;" class="card">
+                                                <div style="border-radius: 8%;"  class="widget-body">
+
+                                               
+                                                <div  style="margin-top: 16px;" class="card-body">
+
+
+
+                                                    <div   class="panel-body">
+                
+                                                        <div style="margin: 0;text-align: center;float: none; " class="pictureProfile">
+                                                            <div  class="card card-profile">
+                                                                <div style="margin-top: -26px;" class="card-avatar">
+                                                                    <a href="#">
+                                                                        <img class="img" style="width: 100px;border-radius:50%;" src="https://qamurad.com/uploads/personalPhotos/603bebc55dc31.jpeg">
+                                                    
+                                                                    </a>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <h6 class="card-category text-gray"></h6>
+                                                                    
+                                                                    <h4 style="background: #b24ac4; margin-bottom: 4px;border-radius: 8%;" class="btn btn-primary btn-round">Rating:  0</h4>
+                                                                    <p class="card-description"></p>
+                                                    
+                                                                    <a href="#" style="background: #b24ac4;border-radius: 8%;" class="btn btn-primary btn-round"> 0  Question </a>
+                                                    
+                                                                    <a href="#" style="background: #b24ac4;border-radius: 8%;" class="btn btn-primary btn-round">0   Answer  </a>
+                                                                    <a href="#" style="background: #b24ac4;border-radius: 8%;" class="btn btn-primary btn-round">0   Reply   </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                            
+                            
+                            
+                                                </div>
+                                            </div>
+
+                                                
+                                        </div>
+
+                            
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+               
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  
+                    
+                   
+                </div>
+                <!-- /Page Body -->
+            </div>
+            <!-- /Page Content -->
+      
+
+    <!--Basic Scripts-->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!--Beyond Scripts-->
+    <script src="assets/js/beyond.min.js"></script>
+
+    <!--Page Related Scripts-->
+    
+</body>
+<!--  /Body -->
+</html>

@@ -1,0 +1,284 @@
+/****************************************************************************
+                            Custom Global data
+/****************************************************************************/
+
+.lightblue {
+    color: #87bde4 !important;
+}
+
+
+/****************************************************************************
+                            Navigation Area / Header
+/****************************************************************************/
+
+.dashboard-page .databox .databox-left {
+    width: 50px;
+    height: 65px;
+    padding: 22px;
+    color: #fff;
+    padding-left: 17px;
+}
+
+
+/* .databox-left i {
+    color: #fff !important;
+} */
+
+
+/****************************************************************************
+                            Navigation Area / Header
+/****************************************************************************/
+
+.navbar .navbar-inner .navbar-header .navbar-account .account-area .login-area .avatar {
+    border-left: 0px solid transparent !important;
+}
+
+
+/****************************************************************************
+                            Sidebar
+/****************************************************************************/
+
+.orders-container {
+    border-radius: 20px!important;
+    box-shadow: none;
+}
+
+.sidebar-header-wrapper {
+    color: #fb6e52;
+    font-size: 20px;
+    z-index: 10000;
+    text-align: center;
+    top: 5px;
+}
+
+.page-sidebar .sidebar-menu a {
+    height: 45px;
+    line-height: 42px;
+    padding: 0 18px 0 7px;
+    font-size: 13px;
+    text-decoration: none;
+    color: #737373;
+}
+.orders-container .orders-list .order-item .item-right .item-price {
+    font-size: 25px;
+    margin: 10px auto !important;
+    font-weight: bold;
+    color: #fb6e52;
+    margin-top: 0px !important;
+}
+
+.orders-container .orders-header h6 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500 !important;
+}
+
+.orders-container .orders-list .order-item .item-right {
+    padding-left: 16px;
+    text-align: left;
+}
+
+.orders-container .orders-header {
+    position: relative;
+    height: 43px;
+    padding: 14px 10px;
+    border-bottom: none!important;
+    background-color: #FFFFFF;
+    color: #525969;
+}
+
+.item-booker img {
+    padding: 5px;
+    border-radius: 5px;
+    width: 35px;
+}
+
+.sidebar-item-info span {
+    background: #F3F6F9;
+    border-radius: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: -25px;
+}
+
+
+/****************************************************************************
+                            LOGIN PAGE
+/****************************************************************************/
+
+.login-banner {
+    text-align: center;
+}
+
+.login-banner img {
+    width: 200px;
+}
+
+.login-container {
+    max-width: 450px;
+}
+
+.login-container .loginbox {
+    width: 450px !important;
+}
+
+.loginbox .alert-danger {
+    background: antiquewhite;
+    border-left: 6px solid #df5138;
+    margin-top: 20px;
+    color: #a94543;
+    padding: 1px 21px 5px 30px;
+}
+
+
+/****************************************************************************
+                            Data table
+/****************************************************************************/
+
+.dataTables_filter label:before {
+    font-family: "FontAwesome";
+    content: "" !important;
+}
+
+.loading-datatable {
+    background: #0072c6 !important;
+    padding: 20px;
+    position: absolute;
+    left: 40%;
+    top: 40%;
+    color: #fff;
+}
+
+.balance {
+    font-family: 'Roboto';
+    font-weight: bold;
+}
+
+
+/****************************************************************************
+                           Notification CSS
+/****************************************************************************/
+
+.noty_theme__mint.noty_type__success {
+    background-color: #46ef46!important;
+    border-bottom: 1px solid #29b929!important;
+    color: #000!important;
+    padding: 5px!important;
+}
+
+.noty_theme__mint.noty_type__error {
+    background-color: #DE636F!important;
+    border-bottom: 1px solid #CA5A65!important;
+    padding: 5px!important;
+}
+
+
+/****************************************************************************
+                            Admin Page
+/****************************************************************************/
+
+.ml-1 {
+    margin-left: 5px;
+}
+
+.mr-1 {
+    margin-right: 5px;
+}
+
+.pointer {
+    cursor: pointer !important;
+}
+
+.widget {
+    padding: 0;
+    margin: 15px 0 30px 0 !important;
+}
+
+.card .box {
+    color: #fff !important;
+    padding: 1px;
+}
+
+.create-page input[type="checkbox"],
+.create-page input[type="radio"] {
+    opacity: 1 !important;
+    position: inherit !important;
+}
+
+.parsley-errors-list {
+    list-style: none;
+    padding-left: 5px;
+    color: #ff3508;
+}
+
+.border-1 {
+    border: 1px solid #8080801f;
+    padding: 5px;
+}
+
+.dashboard-admin-box {
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.single-item-dashboard {
+    box-shadow: 5px 8px 20px 9px #845e5e17;
+    padding: 9px 8px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.single-item-dashboard img {
+    width: 40px;
+}
+
+.single-item-dashboard h3 {
+    font-size: 13px;
+    font-weight: bold!important;
+    color: #5A6170;
+    margin: 10px 0px;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__display {
+    color: #000!important;
+}
+
+.nav-tabs>li.active>a.active {
+    background: #0072c6;
+    color: #fff;
+    margin-left: -12px;
+    padding: 12px 30px;
+    border: 0px;
+}
+
+.nav-tabs>li {
+    margin-bottom: 0px;
+    background: #eeeeee;
+    margin-left: 0px;
+    margin-right: 30px;
+}
+
+
+/* @media (min-width: 768px){
+    .col-sm-2 {
+        width: 20%;
+    }
+} */
+
+
+/*** Toaster ***/
+
+#toast-container {
+    width: 300px;
+    top: 12px;
+    position: fixed;
+    z-index: 9999;
+    right: 10px !important;
+}
+
+
+/*** Toaster ***/

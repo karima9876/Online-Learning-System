@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.6
+Version: 1.6.0
+Purchase: https://wrapbootstrap.com/theme/beyondadmin-adminapp-angularjs-mvc-WB06R48S4
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Head -->
+<head>
+    <meta charset="utf-8" />
+    <title>Blank Page</title>
+
+    <meta name="description" content="blank page" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />  
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--Basic Styles-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/weather-icons.min.css" rel="stylesheet" />
+
+    <!--Fonts-->
+    <link href="../fonts.googleapis.com/css@family=open+sans_3a300italic,400italic,600italic,700italic,400,600,700,300.css"
+          rel="stylesheet" type="text/css">
+
+    <!--Beyond styles-->
+    <link id="beyond-link" href="assets/css/beyond.min.css" rel="stylesheet" />
+    <link href="assets/css/demo.min.css" rel="stylesheet" />
+    <link href="assets/css/typicons.min.css" rel="stylesheet" />
+    <link href="assets/css/animate.min.css" rel="stylesheet" />
+    <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+
+    <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+    <script src="assets/js/skins.min.js"></script>
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+    <!-- Loading Container -->
+    <div class="loading-container">
+        <div class="loader"></div>
+    </div>
+    <!--  /Loading Container -->
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="navbar-container">
+                <!-- Navbar Barnd -->
+                <div class="navbar-header pull-left">
+                    <a href="#" class="navbar-brand">
+                        <small>
+                            <img src="assets/img/logo.png" alt="" />
+                        </small>
+                    </a>
+                </div>
+                <!-- /Navbar Barnd -->
+                <!-- Sidebar Collapse -->
+                <div class="sidebar-collapse" id="sidebar-collapse">
+                    <i class="collapse-icon fa fa-bars"></i>
+                </div>
+                <!-- /Sidebar Collapse -->
+                <!-- Account Area and Settings --->
+                <div class="navbar-header pull-right">
+                    <div class="navbar-account">
+                        <ul class="account-area">
+                            
+                        
+                            <li>
+                                <a class="login-area dropdown-toggle" data-toggle="dropdown">
+                                    <div class="avatar" title="View your public profile">
+                                        <img src="assets/img/avatars/adam-jansen.jpg">
+                                    </div>
+                                    <section>
+                                        <h2><span class="profile"><span>Karima Jaman <i class="fa fa-angle-down"></i></span>
+                                        </span></h2>
+                                        
+                                    </section>
+                                    
+                                </a>
+                                
+                                <!--Login Area Dropdown-->
+                                <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
+                                    <li class="username username-hide-on-mobile"><a>Karima Jaman</a></li>
+                                    <!-- <li class="email"><a>karimajamn@live.com</a></li> -->
+                    
+                                                
+                                                    <li>
+                                                        <a href="profile.html"><i class="fa fa-user"></i> Profile </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="change password.html"><i class="fa fa-location-arrow"></i> Change Password </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href=""><i class="fa fa-key"></i> Log Out </a>
+                                                    </li>
+                    
+                                                </ul>
+                                                                        </li>
+                                           
+                                        </ul>
+                                    </div>
+                                
+                        
+                      
+                    </div>
+                </div>
+                <!-- /Account Area and Settings -->
+            </div>
+        </div>
+    </div>
+    <!-- /Navbar -->
+    <!-- Main Container -->
+    <div class="main-container container-fluid">
+        <!-- Page Container -->
+        <div class="page-container">
+            <!-- Page Sidebar -->
+            <div class="page-sidebar" id="sidebar">
+                <!-- Page Sidebar Header-->
+                <div class="sidebar-header-wrapper">
+                    <input type="text" class="searchinput" />
+                    <i class="searchicon fa fa-search"></i>
+                    <div class="searchhelper">Search Reports, Charts, Emails or Notifications</div>
+                </div>
+                <!-- /Page Sidebar Header -->
+                <!-- Sidebar Menu -->
+                <ul class="nav sidebar-menu">
+                    <!--Dashboard-->
+                    <li>
+                        <a href="index.html">
+                            <i class="menu-icon glyphicon glyphicon-home"></i>
+                            <span class="menu-text"> Dashboard </span>
+                        </a>
+                    </li>
+                    <!--Databoxes-->
+                    <li>
+                        <a href="ask question.html">
+                            <i class=" menu-icon glyphicon glyphicon-question-sign"></i>
+                            
+                            <span class="menu-text"> Ask Question </span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#" class="menu-dropdown">
+                            <i class="menu-icon glyphicon glyphicon-user"></i>
+                            <span class="menu-text"> Student </span>
+
+                            <i class="menu-expand"></i>
+                        </a>
+
+                        <ul class="submenu">
+                            <li>
+                                <a href="Add student.html">
+                                    <span class="menu-text">Add Student</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="studentlist.html">
+                                    <span class="menu-text">Student List</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--Tables-->
+                    <li>
+                        <a href="categorylist.html" class="menu-dropdown">
+                            <i class="menu-icon glyphicon glyphicon-tasks"></i>
+                            <span class="menu-text"> Category </span>
+
+                            <i class="menu-expand"></i>
+                        </a>
+
+                        <ul class="submenu">
+                            <li>
+                                <a href="Add category.html">
+                                    <span class="menu-text">Add Category</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="categorylist.html">
+                                    <span class="menu-text">Category List</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="rating.html">
+                            <i class=" menu-icon glyphicon glyphicon-star-empty"></i>
+                            
+                            <span class="menu-text"> Rating </span>
+                        </a>
+                    </li>
+                    
+                            
+                   
+                    <li>
+                        <a href="">
+                            <i class="menu-icon fa fa-envelope-o"></i>
+                            <span class="menu-text">Message</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="export.html">
+                            <i class="menu-icon glyphicon glyphicon-download"></i>
+                            <span class="menu-text">Export</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="primary student list.html" class="menu-dropdown">
+                            <i class="menu-icon glyphicon glyphicon-user"></i>
+                            <span class="menu-text">Primary Student </span>
+
+                            <i class="menu-expand"></i>
+                        </a>
+
+                        <ul class="submenu">
+                            <li>
+                                <a href="Add primary student.html">
+                                    <span class="menu-text">Add  Primary Student</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="primary student list.html">
+                                    <span class="menu-text">Student Primary List</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </div>
+            </div>
+            <!-- /Page Body -->
+        </div> 
+    <div class="main-container container-fluid">
+        <!-- Page Container -->
+        <div class="page-container">
+            <!-- Page Sidebar -->
+           
+            <!-- /Page Sidebar -->
+
+                                  
+            <!-- Page Content -->
+            <div class="page-content">
+                <div class="page-breadcrumbs">
+                    <ul class="breadcrumb">
+                        <li>
+                            <i class="fa fa-home"></i>
+                            <a href="#">Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="#">Add Question</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="widget-header">
+                    <span class="widget-caption">Add Question Form</span>
+                </div>
+               
+                
+                <div class="page-body">
+                   
+                    <div style="margin-top: 10px;margin-left: 295px;" class="col-lg-6 col-sm-6 col-xs-12">
+                       
+                        <div class="widget  radius-bordered">
+                           
+                            <div class="widget-body">
+                                <div class="docs-example">
+                                    <!-- <ul class="nav nav-tabs tabs-flat">
+                                        <li class="active"><a href="#info-tab" data-toggle="tab">Dashbord</a></li>
+                                        <li class=""><a href="#address-tab" data-toggle="tab">Ask Question</a></li>
+                                    </ul> -->
+
+                                    <form id="accountForm" method="post" class="form-horizontal bv-form" novalidate="novalidate">
+                                        <div class="tab-content tabs-flat">
+                                            <div class="tab-pane active" id="address-tab">
+                                                <div class="form-group has-feedback">
+                                                    <label class="col-lg-4 control-label">Title<span class="red">*</span>:</label>
+                                                    <div class="col-lg-8">
+                                                        <input placeholder="Enter Title" type="text" class="form-control" name="address" data-bv-field="address"><i class="form-control-feedback" data-bv-field="address" style="display: none;"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group has-feedback">
+                                                    <label class="col-lg-4 control-label">Category Name<span class="red">*</span>:</label>
+                                                    <div class="col-lg-8">
+                                                        <select class="form-control" name="country" data-bv-field="country">
+                                                            <option value="">Select a Category</option>
+                                                            <option value="FR">C++</option>
+                                                            <option value="DE">Java</option>
+                                                            <option value="IT">PHP</option>
+        
+                                                        </select><i class="form-control-feedback" data-bv-field="country" style="display: none;"></i>
+                                                    </div>
+                                                </div>
+
+
+
+
+
+
+                                                
+                                                
+                                                    
+                                                        
+                                                            <div  class="form-group has-feedback">
+                                                                <label class="col-lg-4 control-label"> Content <span class="red">*</span> : </label>
+                                                                <div  class="col-lg-8">  
+                                                                        <div   class="widget-header bordered-bottom bordered-themeprimary">
+                                                                            
+                                                                            <div class="widget-buttons">
+                                                                                <a href="#" data-toggle="maximize">
+                                                                                    <i class="fa fa-expand"></i>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div  class="widget-body">
+                                                                            <div  class="widget-main no-padding">
+                                                                                <div  id="summernote"></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                
+                                                                
+                                                            </div>
+                                                            
+                                                       
+
+
+                                                    
+                                                    
+                                               
+
+
+
+
+
+
+
+
+                                                
+
+                                                <div class="form-group has-feedback">
+                                                    <label class="col-lg-4 control-label">Upload File<span class="red">*</span>:</label>
+                                                    <div class="col-lg-8">
+                                                        <input type="file" name="ufile" value="" placeholder="Enter Files " class="form-control input-inline input-medium">
+
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="form-group has-feedback">
+                                                    <label for="captcha" class="col-lg-4 control-label">Captcha  <span class="red">*</span> :</label>
+                                                    <div class="col-md-6">
+                                                        <div class="captcha">
+                                                            <span><img width="60px"  src="https://www.pandasecurity.com/en/mediacenter/src/uploads/2014/09/avoid-captcha.jpg"></span>
+                                                            <button type="button" class="btn btn-success btn-refresh"><i class="fa fa-refresh"></i></button>
+                                                        </div>
+                                                        <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">
+                    
+                    
+                                                        </div>
+    
+                                                </div>
+
+
+
+
+                                                
+                                               
+
+
+
+
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="form-group has-feedback">  
+                                            <div class="col-md-offset-5 col-md-6">
+                                                <button type="submit" class="btn bg-info">Save</button>
+                                                <button type="reset" class="btn default reset">Cancel</button>
+                                            </div>
+                                    
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Page Body -->
+            </div>
+            <!-- /Page Content -->
+      
+
+    <!--Basic Scripts-->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!--Beyond Scripts-->
+    <script src="assets/js/beyond.min.js"></script>
+
+    <!--Page Related Scripts-->
+    <script src="assets/js/editors/wysiwyg/jquery.hotkeys.js"></script>
+    <script src="assets/js/editors/wysiwyg/prettify.js"></script>
+    <script src="assets/js/editors/wysiwyg/bootstrap-wysiwyg.js"></script>
+    <script>
+        $(function () {
+            function initToolbarBootstrapBindings() {
+                var fonts = ['Serif', 'Sans', 'Arial', 'Arial Black', 'Courier',
+                      'Courier New', 'Comic Sans MS', 'Helvetica', 'Impact', 'Lucida Grande', 'Lucida Sans', 'Tahoma', 'Times',
+                      'Times New Roman', 'Verdana'],
+                      fontTarget = $('[title=Font]').siblings('.dropdown-menu');
+                $.each(fonts, function (idx, fontName) {
+                    fontTarget.append($('<li><a data-edit="fontName ' + fontName + '" style="font-family:\'' + fontName + '\'">' + fontName + '</a></li>'));
+                });
+                $('a[title]').tooltip({ container: 'body' });
+                $('.dropdown-menu input').click(function () { return false; })
+                    .change(function () { $(this).parent('.dropdown-menu').siblings('.dropdown-toggle').dropdown('toggle'); })
+                .keydown('esc', function () { this.value = ''; $(this).change(); });
+
+                $('[data-role=magic-overlay]').each(function () {
+                    var overlay = $(this), target = $(overlay.data('target'));
+                    overlay.css('opacity', 0).css('position', 'absolute').offset(target.offset()).width(target.outerWidth()).height(target.outerHeight());
+                });
+                if ("onwebkitspeechchange" in document.createElement("input")) {
+                    var editorOffset = $('#editor').offset();
+                    $('#voiceBtn').css('position', 'absolute').offset({ top: editorOffset.top, left: editorOffset.left + $('#editor').innerWidth() - 35 });
+                } else {
+                    $('#voiceBtn').hide();
+                }
+            };
+            function showErrorAlert(reason, detail) {
+                var msg = '';
+                if (reason === 'unsupported-file-type') { msg = "Unsupported format " + detail; }
+                else {
+                    console.log("error uploading file", reason, detail);
+                }
+                $('<div class="alert"> <button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                 '<strong>File upload error</strong> ' + msg + ' </div>').prependTo('#alerts');
+            };
+            initToolbarBootstrapBindings();
+            $('.wysiwyg-editor').wysiwyg({ fileUploadError: showErrorAlert });
+            window.prettyPrint && prettyPrint();
+        });
+    </script>
+
+    <!--Summernote Scripts-->
+    <script src="assets/js/editors/summernote/summernote.js"></script>
+    <script>
+        $('#summernote').summernote({ height: 300 });
+    </script>
+    
+</body>
+<!--  /Body -->
+</html>

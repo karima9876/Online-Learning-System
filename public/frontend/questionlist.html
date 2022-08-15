@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Head -->
+<head>
+    <meta charset="utf-8" />
+    <title>Blank Page</title>
+
+    <meta name="description" content="blank page" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--Basic Styles-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/weather-icons.min.css" rel="stylesheet" />
+    <link href="phq/style.css" rel="stylesheet" />
+    <!--Fonts-->
+    <link href="../fonts.googleapis.com/css@family=open+sans_3a300italic,400italic,600italic,700italic,400,600,700,300.css"
+          rel="stylesheet" type="text/css">
+
+    <!--Beyond styles-->
+    <link id="beyond-link" href="assets/css/beyond.min.css" rel="stylesheet" />
+    <link href="assets/css/demo.min.css" rel="stylesheet" />
+    <link href="assets/css/typicons.min.css" rel="stylesheet" />
+    <link href="assets/css/animate.min.css" rel="stylesheet" />
+    <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+
+
+    <script src="assets/js/skins.min.js"></script>
+</head>
+
+<body>
+
+    <div class="loading-container">
+    <div class="loader"></div>
+</div>
+
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="navbar-container">
+                <!-- Navbar Barnd -->
+                <div class="navbar-header pull-left">
+                    <a href="#" class="navbar-brand">
+                        <small>
+                            <img src="assets/img/logo.png" alt="" />
+                        </small>
+                    </a>
+                </div>
+                <!-- /Navbar Barnd -->
+                <!-- Sidebar Collapse -->
+                <div class="sidebar-collapse" id="sidebar-collapse">
+                    <i class="collapse-icon fa fa-bars"></i>
+                </div>
+                <!-- /Sidebar Collapse -->
+                <!-- Account Area and Settings --->
+                <div class="navbar-header pull-right">
+                    <div class="navbar-account">
+                        <ul class="account-area">
+                            <li>
+                                <a class="login-area dropdown-toggle" data-toggle="dropdown">
+                                    <div class="avatar" title="View your public profile">
+                                        <img src="assets/img/avatars/adam-jansen.jpg">
+                                    </div>
+                                    <section>
+                                        <h2><span class="profile"><span>Karima Jaman <i class="fa fa-angle-down"></i></span>
+                                        </span></h2>
+                                    </section>
+                                </a>
+
+                                <!--Login Area Dropdown-->
+                                <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
+                                    <li class="username username-hide-on-mobile"><a>Karima Jaman</a></li>
+                                    <!-- <li class="email"><a>karimajamn@live.com</a></li> -->
+
+
+                                    <li>
+                                        <a href="profile.html"><i class="fa fa-user"></i> Profile </a>
+                                    </li>
+                                    <li>
+                                        <a href="change password.html"><i class="fa fa-location-arrow"></i> Change Password </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><i class="fa fa-key"></i> Log Out </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /Account Area and Settings -->
+        </div>
+    </div>
+
+    <div class="main-container container-fluid">
+        <div class="page-container">
+            <div class="page-sidebar" id="sidebar">
+                <!-- Page Sidebar Header-->
+                <div class="sidebar-header-wrapper">
+                    <input type="text" class="searchinput" />
+                    <i class="searchicon fa fa-search"></i>
+                    <div class="searchhelper">Search Reports, Charts, Emails or Notifications</div>
+                </div>
+                <!-- /Page Sidebar Header -->
+                <!-- Sidebar Menu -->
+                <ul class="nav sidebar-menu">
+                    <!--Dashboard-->
+                    <li>
+                        <a href="index.html">
+                            <i class="menu-icon glyphicon glyphicon-home"></i>
+                            <span class="menu-text"> Dashboard </span>
+                        </a>
+                    </li>
+                    <!--Databoxes-->
+                    <li>
+                        <a href="ask question.html">
+                            <i class=" menu-icon glyphicon glyphicon-question-sign"></i>
+
+                            <span class="menu-text"> Ask Question </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="menu-dropdown">
+                            <i class="menu-icon glyphicon glyphicon-user"></i>
+                            <span class="menu-text"> Student </span>
+
+                            <i class="menu-expand"></i>
+                        </a>
+
+                        <ul class="submenu">
+                            <li>
+                                <a href="Add student.html">
+                                    <span class="menu-text">Add Student</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="studentlist.html">
+                                    <span class="menu-text">Student List</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--Tables-->
+                    <li>
+                        <a href="categorylist.html" class="menu-dropdown">
+                            <i class="menu-icon glyphicon glyphicon-tasks"></i>
+                            <span class="menu-text"> Category </span>
+
+                            <i class="menu-expand"></i>
+                        </a>
+
+                        <ul class="submenu">
+                            <li>
+                                <a href="Add category.html">
+                                    <span class="menu-text">Add Category</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="categorylist.html">
+                                    <span class="menu-text">Category List</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="rating.html">
+                            <i class=" menu-icon glyphicon glyphicon-star-empty"></i>
+
+                            <span class="menu-text"> Rating </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="menu-icon fa fa-envelope-o"></i>
+                            <span class="menu-text">Message</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="export.html">
+                            <i class="menu-icon glyphicon glyphicon-download"></i>
+                            <span class="menu-text">Export</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="primary student list.html" class="menu-dropdown">
+                            <i class="menu-icon glyphicon glyphicon-user"></i>
+                            <span class="menu-text">Primary Student </span>
+
+                            <i class="menu-expand"></i>
+                        </a>
+
+                        <ul class="submenu">
+                            <li>
+                                <a href="Add primary student.html">
+                                    <span class="menu-text">Add  Primary Student</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="primary student list.html">
+                                    <span class="menu-text">Student Primary List</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="page-content">
+                <div class="page-breadcrumbs">
+                    <ul class="breadcrumb">
+                        <li>
+                            <i class="fa fa-home"></i>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">Question List</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="page-body">
+
+                    <div  class="row" >
+                        <div class="portlet-body" >
+                            <div class="report">All Question List</div>
+                            <div  class="col-md-12">
+                                <div style="float: right;" class="social clear">
+                                    <div class="searchbtn clear">
+                                        <form method="POST" action="">
+                                            <input type="text" name="search" id="search"  value="" placeholder="Search keyword..."/>
+                                            <input type="submit" name="submit" value="Search"/>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="background: #ffffff none repeat scroll 0 0;"  class="maincontent clear">
+                                <div class="samepost">
+                                    <h2><a href="">Artifical Intelligence</a></h2>
+                                    <img width="100" src="img/1.jpg"  alt="">
+
+                                    <h6><a href="">karima   </a>  Asked: 1 Month ago </h6>
+                                    <ul id="menu">
+                                        <li><a> .....</a>
+                                            <ul>
+                                                <li><a href="#">edit </a></li>
+                                                <li><a href="#" onclick="return confirm('Do You want to confirm to be Deleted?')">delete</a></li>
+
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                    <h1>Definition of AI  </h1>
+                                    <div>
+                                    <pre >
+                                        What is Artificial intelligence?? Please give me a answer  with a short  description!!!
+                                    </pre>
+                                    </div>
+                                    <h5><a download="true" href="">---click Image/Pdf</a></h5>
+
+                                    <div class="leftmore clear">
+                                        <a href="">2 Answers</a>
+                                    </div>
+                                    <div class="readmore clear">
+                                        <a href="">Answer</a>
+                                    </div>
+                                </div>
+
+                                <div class="samepost">
+                                    <h2><a href="">Compiler Design</a></h2>
+
+                                    <img width="100" src="img/2.jpg"  alt="">
+
+                                    <h6><a href="">Moon   </a>  Asked:  2 Month ago </h6>
+                                    <ul id="menu">
+                                        <li><a> .....</a>
+                                            <ul>
+                                                <li><a href="#">edit </a></li>
+                                                <li><a href="#" onclick="return confirm('Do You want to confirm to be Deleted?')">delete</a></li>
+
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                    <h1>Definition of AI  </h1>
+                                    <div>
+                                            <pre >
+                                                What is Compiler Design? Please give me a answer  with a short  description!!!
+                                            </pre>
+                                    </div>
+                                    <h5><a download="true" href="">---click Image/Pdf</a></h5>
+
+                                    <div class="leftmore clear">
+                                        <a href=""> No Answers </a>
+                                    </div>
+                                    <div class="readmore clear">
+                                        <a href="">Answer</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         
+        </div>
+    </div>
+
+
+
+
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/slimscroll/jquery.slimscroll.min.js"></script>
+
+
+<script src="assets/js/beyond.min.js"></script>
+<link rel="stylesheet" href="phq/footer/css/style.css">
+
+
+</body>
+
+</html>
