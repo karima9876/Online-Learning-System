@@ -20,7 +20,6 @@
     <link href="{{asset('assets/css/font-awesome.min.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/css/weather-icons.min.css')}}" rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('/sharing/footer/css/min.css')}}">
-   
     <!--Fonts-->
     <!-- <link href='../fonts.googleapis.com/css@family=open+sans_3a300italic,400italic,600italic,700italic,400,600,700,300.css'
           rel="stylesheet" type="text/css"> -->
@@ -222,6 +221,29 @@
                     </li>
                    
                    @endif
+
+                   <li class="{{ Route::is('studentlist') || Route::is('userlist') ? 'active open' : '' }}">
+                    <a href="" class="menu-dropdown">
+                        <i class="menu-icon glyphicon glyphicon-tasks"></i>
+                        <span class="menu-text"> Donate </span>
+                       
+
+                        <i class="menu-expand"></i>
+                    </a>
+
+                    <ul class="submenu">
+                    <li class="{{ Route::is('studentlist') ? 'active' : '' }}">
+                            <a href="{{url('/studentlist')}}" active>
+                                <span class="menu-text">Student List </span>
+                            </a>
+                        </li>
+                        {{-- <li class="{{ Route::is('categoryList') ? 'active' : '' }}">
+                            <a href="{{url('/categoryList')}}">
+                                <span class="menu-text">Category List</span>
+                            </a>
+                        </li> --}}
+                    </ul>
+                </li>
                    
                   
                         <li  class="{{ Route::is('addcategory') || Route::is('categoryList') ? 'active open' : '' }}">
@@ -485,9 +507,6 @@
                 </div>
             </div>
         </footer>
-
-
-
 
 
 <script src="{{asset('assets/js/jquery.min.js')}}"></script>
