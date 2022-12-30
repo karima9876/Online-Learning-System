@@ -15,6 +15,7 @@ use App\Http\Controllers\UpDownController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\FbController;
+use App\Http\Controllers\DonateController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -39,6 +40,8 @@ Route::get('/userlist',[UserController::class,'userList'])->name('userlist');
 Route::get('/user/edit/{student_id}',[UserController::class,'userEdit'])->name('user.edit');
 Route::post('/user/update/{student_id}',[UserController::class,'updateUser'])->name('user.update');
 Route::get('/user/delete/{student_id}',[UserController::class,'deleteUser'])->name('user.delete');
+
+
 //puser
 Route::get('/addpuser',[PuserController::class,'addPuser'])->name('addpuser');
 Route::post('/puser/store',[PuserController::class,'storePuser'])->name('puser.store');
@@ -126,4 +129,8 @@ Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallba
 //search question
 Route::post('welcomeSearch', 'MainController@searchWelcome');
 Route::get('welcomeSearch', 'MainController@searchWelcome');
+
+//Donate
+Route::get('/studentlist',[DonateController::class,'studentlist'])->name('studentlist');
+Route::get('/donate',[DonateController::class,'donate'])->name('donate');
 
