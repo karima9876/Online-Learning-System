@@ -16,8 +16,8 @@
     height: 200px;
 }
 .student .inner h4, .student .inner h5 {
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
 }
 .student .inner .progress {
     margin-bottom: 0;

@@ -132,5 +132,6 @@ Route::get('welcomeSearch', 'MainController@searchWelcome');
 
 //Donate
 Route::get('/studentlist',[DonateController::class,'studentlist'])->name('studentlist');
-Route::get('/donate',[DonateController::class,'donate'])->name('donate');
+Route::get('/donate/{id}',[DonateController::class,'donate'])->name('donate');
+Route::post('/donate/payment/{id}',[DonateController::class,'donatePayment'])->name('donate.payment');
 
