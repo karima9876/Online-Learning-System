@@ -69,7 +69,7 @@
                                                         <h5 class="student-col">{{$user->ses}}</h5> 
                                                         <p class="student-col">{{$user->cnumber}}</p>
                                                         <p class="student-col">{{$user->address}}</p>
-                                                            <a href="{{url('donate')}}" class="btn btn-success">Donate Now</a>
+                                                            <a href="{{url('donate', $user->id)}}" class="btn btn-success">Donate Now</a>
                                                     </div>
                                                 </div>
                                                 @endforeach
