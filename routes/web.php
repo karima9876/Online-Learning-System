@@ -135,6 +135,11 @@ Route::get('welcomeSearch', 'MainController@searchWelcome');
 Route::get('/studentlist',[DonateController::class,'studentlist'])->name('studentlist');
 Route::get('/donate/{id}',[DonateController::class,'donate'])->name('donate');
 Route::post('/donate/payment/{id}',[DonateController::class,'donatePayment'])->name('donate.payment');
+Route::post('/payment/success', [DonateController::class, 'successPayment']);
+Route::post('/payment/fail', [DonateController::class, 'failPayment']);
+Route::post('/payment/cancel', [DonateController::class, 'cancelPayment']);
+Route::post('/payment/ipn', [DonateController::class, 'ipnPayment']);
+
 
 
 // SSLCOMMERZ Start
