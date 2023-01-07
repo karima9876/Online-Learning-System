@@ -16,6 +16,7 @@ use App\Http\Controllers\MessageController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\FbController;
 use App\Http\Controllers\DonateController;
+use App\Http\Controllers\SslCommerzPaymentController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -30,7 +31,7 @@ Route::group(['prefix' => ''], function () {
  Route::get('/',[MainController::class,'displayWelcome'])->name('displayWelcome');
  Route::get('download-file-{id}',[MainController::class,'downloadFile'])->name('downLoadFile');
  Route::get('/pCategory',[MainController::class,'displayParticularCategory'])->name('displayParticularCategory');
- 
+
 
 
 //User
@@ -77,14 +78,14 @@ Route::get('questionsAdd',[QuestionController::class,'addQuestion'])->name('addQ
  Route::get('questionsEdit',[QuestionController::class,'editQuestion'])->name('editQuestion');
  Route::get('questions/delete',[QuestionController::class,'deleteQuestion'])->name('deleteQuestion');
  Route::post('questions/save',[QuestionController::class,'saveQuestion'])->name('saveQuestion');
- 
+
 //answers  list
 Route::get('answers',[AnswerController::class,'listAnswer'])->name('answers');
 Route::get('answersAdd',[AnswerController::class,'addAnswer'])->name('addAnswer');
 Route::get('answersEdit',[AnswerController::class,'editAnswer'])->name('editAnswer');
 Route::get('answers/delete',[AnswerController::class,'deleteAnswer'])->name('deleteAnswer');
 Route::post('answers/save',[AnswerController::class,'saveAnswer'])->name('saveAnswer');
- 
+
  //questions report
  Route::get('question_reportList',[ReportController::class,'question_reportList'])->name('question_reportList');
  Route::post('reportQuestion',[ReportController::class,'saveReport_Question'])->name('reportQuestion');
@@ -134,4 +135,22 @@ Route::get('welcomeSearch', 'MainController@searchWelcome');
 Route::get('/studentlist',[DonateController::class,'studentlist'])->name('studentlist');
 Route::get('/donate/{id}',[DonateController::class,'donate'])->name('donate');
 Route::post('/donate/payment/{id}',[DonateController::class,'donatePayment'])->name('donate.payment');
+Route::post('/payment/success', [DonateController::class, 'successPayment']);
+Route::post('/payment/fail', [DonateController::class, 'failPayment']);
+Route::post('/payment/cancel', [DonateController::class, 'cancelPayment']);
+Route::post('/payment/ipn', [DonateController::class, 'ipnPayment']);
 
+
+
+// SSLCOMMERZ Start
+Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
+Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
+
+Route::post('/pay', [SslCommerzPaymentController::class, 'index']);
+Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
+
+Route::post('/success', [SslCommerzPaymentController::class, 'success']);
+Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
+Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
+
+Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
