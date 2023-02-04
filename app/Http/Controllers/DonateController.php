@@ -15,7 +15,12 @@ class DonateController extends Controller
     }
     public function donate($id){
         $user =User::where('id', $id)->role('student')->first();
-        return view('donate.donate',compact('user'));
+        $user_payment = Payment::where("user_id", $id)
+            ->whereIn('status', ['Processing', 'Complete'])
+            ->orderBy('updated_at', 'desc')
+            ->limit(6)
+            ->get();
+        return view('donate.donate',compact('user', 'user_payment'));
     }
 
     public function donatePayment(Request $request,$id){

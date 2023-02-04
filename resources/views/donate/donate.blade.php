@@ -1,4 +1,4 @@
-@extends('layouts.master') 
+@extends('layouts.master')
 @section('custom_css')
 <!--New Styles-->
 <link type="text/css" href="{{ asset('assets/new/style.css') }}" rel="stylesheet" media="screen">
@@ -9,7 +9,7 @@
 		}
 	</style>
 @endsection
-@section('content') 
+@section('content')
                 <div class="page-breadcrumbs">
                     <ul class="breadcrumb">
                         <li>
@@ -179,16 +179,20 @@
                                                 </table>
                                               </div>
                                               <div class="inner">
-                                                <h4 class="text-center">Donators for <strong></strong></h4>
-                                                <table class="table table-bordered">
+                                                <h4 class="text-center">Previous Donation List<strong></strong></h4>
+                                                <table class="table table-responsive table-bordered">
                                                   <tr>
-                                                    <th class="text-center">Name</th>
-                                                    <th class="text-center">Amount (USD)</th>
+                                                    <th class="text-center">Sender Name</th>
+                                                    <th class="text-center">Amount</th>
                                                   </tr>
-                                                  <tr>
-                                                    <td>card_name</td>
-                                                    <td>donate_amount</td>
-                                                  </tr>
+                                                    @if(!empty($user_payment))
+                                                        @foreach($user_payment as $payment)
+                                                          <tr>
+                                                            <td>{{$payment->sender_name}}</td>
+                                                            <td>{{$payment->amount}}</td>
+                                                          </tr>
+                                                        @endforeach
+                                                    @endif
                                                 </table>
                                               </div>
                                             </div>
@@ -198,10 +202,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div> 
+                    </div>
             </div>
-           
+
      @endsection
-@section('custom_js') 
-<script src="{{ asset('assets/new/script.js') }}"></script>  
- @endsection 
+@section('custom_js')
+<script src="{{ asset('assets/new/script.js') }}"></script>
+ @endsection
