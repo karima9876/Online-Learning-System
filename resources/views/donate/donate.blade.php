@@ -83,7 +83,7 @@
                                                     <div class='form-row row'>
                                                       <div class='col-xs-12 form-group'>
                                                         <label for="sender_cnumber" class='control-label'>Phone</label>
-                                                        <input name="sender_cnumber" id="sender_cnumber" class='form-control' value="{{ old('sender_cnumber')  }}" type='tel'>
+                                                        <input name="sender_cnumber" v-validate="{ required: true, regex: /^(01[3-9]\d{8})$/ }" id="sender_cnumber" class='form-control' value="{{ old('sender_cnumber')  }}" type='tel'>
                                                       </div>
                                                     </div>
                                                   </div>
