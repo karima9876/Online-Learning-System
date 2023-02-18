@@ -16,6 +16,7 @@ use App\Http\Controllers\MessageController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\FbController;
 use App\Http\Controllers\DonateController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\SslCommerzPaymentController;
 use Illuminate\Support\Facades\Route;
 
@@ -140,6 +141,9 @@ Route::post('/payment/fail', [DonateController::class, 'failPayment']);
 Route::post('/payment/cancel', [DonateController::class, 'cancelPayment']);
 Route::post('/payment/ipn', [DonateController::class, 'ipnPayment']);
 
+// payment list show
+
+Route::get('/paymentlist',[PaymentController::class,'paymentlist'])->name('paymentlist');
 
 
 // SSLCOMMERZ Start

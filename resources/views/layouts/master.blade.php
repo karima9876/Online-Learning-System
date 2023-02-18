@@ -245,6 +245,25 @@
                     </ul>
                 </li>
                    
+
+                @if (!is_null(Auth::user()) &&  (Auth::user()->can('adduser') || Auth::user()->can('paymentlist')))
+                    <li class="{{ Route::is('paymentlist') ? 'active open' : '' }}">
+                        <a href="#" class="menu-dropdown">
+                            <i class="menu-icon glyphicon glyphicon-user"></i>
+                            <span class="menu-text"> Payment </span>
+                            <i class="menu-expand"></i>
+                        </a>
+                        <ul class="submenu"> 
+                            @if($user->can('paymentlist'))
+                            <li class="{{ Route::is('paymentlist') ? 'active' : '' }}">
+                                <a href="{{url('/paymentlist')}}">
+                                    <span class="menu-text">Payment List</span>
+                                </a>
+                            </li>
+                            @endif
+                        </ul>
+                    </li>
+               @endif
                   
                         <li  class="{{ Route::is('addcategory') || Route::is('categoryList') ? 'active open' : '' }}">
                         <a href="" class="menu-dropdown">

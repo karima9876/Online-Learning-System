@@ -29,7 +29,7 @@ class DonateController extends Controller
             'sender_name'=>'required',
             'sender_address'=>'required',
             'sender_email'=>'required',
-            'sender_cnumber'=>'required',
+            'sender_cnumber'=>'required|regex: /^(01[3-9]\d{8})$/', //required: true, regex: /^(01[3-9]\d{8})$/
             'amount'=>'required',
         ]);
         if ($validator->fails()) {
