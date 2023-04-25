@@ -18,6 +18,7 @@ use App\Http\Controllers\FbController;
 use App\Http\Controllers\DonateController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\SslCommerzPaymentController;
+use App\Http\Controllers\OnlineClassController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -158,3 +159,14 @@ Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
 Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
 
 Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
+
+
+// tutoring online class
+
+Route::get('/add-online-class', [OnlineClassController::class, 'addOnlineClass'])->name('add-online-class');
+Route::post('/save-online-class', [OnlineClassController::class, 'saveOnlineClass'])->name('save-online-class');
+Route::get('/list-online-class', [OnlineClassController::class, 'listOnlineClass'])->name('list-online-class');
+
+Route::get('/edit-online-class/{onlineclass_id}', [OnlineClassController::class, 'editOnlineClass'])->name('edit-online-class');
+Route::get('/update-online-class/{onlineclass_id}', [OnlineClassController::class, 'updateOnlineClass'])->name('update-online-class');
+Route::get('/delete-online-class/{onlineclass_id}', [OnlineClassController::class, 'deleteOnlineClass'])->name('delete-online-class');

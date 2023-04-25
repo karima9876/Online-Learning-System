@@ -185,6 +185,17 @@ class RolePermissionSeeder extends Seeder
                                  
                                 ]
                             ],
+                            [
+                                'group_name'=> 'Zoom Online Class',
+                                'permissions'=>[
+                                    'add-online-class',
+                                    'save-online-class',
+                                    'list-online-class',
+                                    'edit-online-class',
+                                    'update-online-class',
+                                    'delete-online-class',
+                                ]
+                            ],
                
             
          ];

@@ -222,34 +222,60 @@
                    
                    @endif
 
-                   <li class="{{ Route::is('studentlist') || Route::is('userlist') ? 'active open' : '' }}">
-                    <a href="" class="menu-dropdown">
-                        <i class="menu-icon glyphicon glyphicon-tasks"></i>
-                        <span class="menu-text"> Donate </span>
-                       
+                    @if (!is_null(Auth::user()) &&  (Auth::user()->can('add-online-class') || Auth::user()->can('list-online-class')))
+                    
+                    <li class="{{ Route::is('add-online-class') || Route::is('list-online-class') ? 'active open' : '' }}">
+                        <a href="#" class="menu-dropdown">
+                            <i class="menu-icon fa fa-book"></i>
+                            <span class="menu-text"> Online Class </span>
+                            
 
+                            <i class="menu-expand"></i>
+                        </a>
+
+                        <ul class="submenu"> 
+                            
+                         @if($user->can('add-online-class'))
+
+                        <li class="{{ Route::is('add-online-class') ? 'active' : '' }}">
+                                <a href="{{url('/add-online-class')}}">
+                                    <span class="menu-text">Add Zoom Class</span>
+                                </a>
+                            </li>
+                        @endif
+                        @if($user->can('list-online-class'))
+                            <li class="{{ Route::is('list-online-class') ? 'active' : '' }}">
+                                <a href="{{url('/list-online-class')}}">
+                                    <span class="menu-text">Zoom Class List</span>
+                                </a>
+                            </li>
+                        @endif
+                        </ul>
+                    </li>
+                   
+                    @endif
+
+                   <li class="{{ Route::is('studentlist') ? 'active open' : '' }}">
+                    <a href="" class="menu-dropdown">
+                        <i class="menu-icon fa fa-money"></i>
+                        <span class="menu-text"> Donate </span>
                         <i class="menu-expand"></i>
                     </a>
 
                     <ul class="submenu">
-                    <li class="{{ Route::is('studentlist') ? 'active' : '' }}">
+                        <li class="{{ Route::is('studentlist') ? 'active' : '' }}">
                             <a href="{{url('/studentlist')}}" active>
                                 <span class="menu-text">Student List </span>
                             </a>
                         </li>
-                        {{-- <li class="{{ Route::is('categoryList') ? 'active' : '' }}">
-                            <a href="{{url('/categoryList')}}">
-                                <span class="menu-text">Category List</span>
-                            </a>
-                        </li> --}}
                     </ul>
                 </li>
                    
 
-                @if (!is_null(Auth::user()) &&  (Auth::user()->can('adduser') || Auth::user()->can('paymentlist')))
+                @if (!is_null(Auth::user()) &&  (Auth::user()->can('paymentlist')))
                     <li class="{{ Route::is('paymentlist') ? 'active open' : '' }}">
                         <a href="#" class="menu-dropdown">
-                            <i class="menu-icon glyphicon glyphicon-user"></i>
+                            <i class="menu-icon fa fa-credit-card"></i>
                             <span class="menu-text"> Payment </span>
                             <i class="menu-expand"></i>
                         </a>
