@@ -1,4 +1,4 @@
-@extends('layouts.master') 
+@extends('layouts.master')
 
 @section('custom_css')
 <style>
@@ -29,7 +29,7 @@
                             <div class="widget">
                                 <div class="widget-header ">
                                     <span class="widget-caption">Update Online Class Form</span>
-                                    
+
                                     <div class="widget-buttons">
                                         <a href="#" data-toggle="maximize">
                                             <i class="fa fa-expand"></i>
@@ -68,7 +68,7 @@
                                                 <label class="col-lg-4 control-label">Start Time<span class="red">*</span>:</label>
                                                 <div class="col-lg-4">
                                                     <div class ='input-group date' id='datetimepicker'>
-                                                        <input autocomplete="off" type="text" value="{{\Carbon\Carbon::parse($category->start_time)->format("m/d/Y H:i:s")}}"  class="form-control" name="start_time" id="start_time">
+                                                        <input autocomplete="off" type="text" value="{{\Carbon\Carbon::parse($category->start_time)->format("d/m/Y H:i:s")}}"  class="form-control" name="start_time" id="start_time">
                                                         <span class="input-group-addon">
                                                             <span class="glyphicon glyphicon-calendar"></span>
                                                         </span>
@@ -78,6 +78,58 @@
                                                             </span>
                                                         @endif
                                                     </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group {{ $errors->has('duration') ? ' has-error' : '' }} has-feedback">
+                                                <label class="col-lg-4 control-label">Duration<span class="red">*</span>:</label>
+                                                <div class="col-lg-8">
+                                                    <input type="number" name="duration" autocomplete="off" value="{{$category->duration}}" placeholder="Enter Duration" class="form-control input-inline input-medium">
+                                                    @if ($errors->has('duration'))
+                                                        <span class="help-block">
+                                                        <strong>{{ $errors->first('duration') }}</strong>
+                                                    </span>
+                                                    @endif
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group {{ $errors->has('course_title') ? ' has-error' : '' }} has-feedback">
+                                                <label class="col-lg-4 control-label">Course Title<span class="red">*</span>:</label>
+                                                <div class="col-lg-8">
+                                                    <select class="form-control input-inline input-medium" type="text" name="course_title">
+                                                        @foreach($categories as $category_single)
+                                                            <option @if($category->category_id == $category_single->id) selected  @endif value="{{$category_single->id}}">{{$category_single->categoryname}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                    @if ($errors->has('course_title'))
+                                                        <span class="help-block">
+                                                        <strong>{{ $errors->first('course_title') }}</strong>
+                                                    </span>
+                                                    @endif
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group {{ $errors->has('course_code') ? ' has-error' : '' }} has-feedback">
+                                                <label class="col-lg-4 control-label">Course Code<span class="red">*</span>:</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" name="course_code" value="{{$category->course_code}}" placeholder="Enter Course Code" class="form-control input-inline input-medium">
+                                                    @if ($errors->has('course_code'))
+                                                        <span class="help-block">
+                                                        <strong>{{ $errors->first('course_code') }}</strong>
+                                                    </span>
+                                                    @endif
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group {{ $errors->has('year_session') ? ' has-error' : '' }} has-feedback">
+                                                <label class="col-lg-4 control-label">Session<span class="red">*</span>:</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" name="year_session" value="{{$category->year_session}}" placeholder="Enter Session" class="form-control input-inline input-medium">
+                                                    @if ($errors->has('year_session'))
+                                                        <span class="help-block">
+                                                        <strong>{{ $errors->first('year_session') }}</strong>
+                                                    </span>
+                                                    @endif
                                                 </div>
                                             </div>
 
@@ -95,7 +147,7 @@
                         </div>
                     </div>
                 </div>
-            
+
 @endsection
 
 @section('custom_js')
