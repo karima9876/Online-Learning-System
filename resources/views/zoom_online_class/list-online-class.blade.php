@@ -1,4 +1,4 @@
-﻿ @extends('layouts.master') 
+﻿ @extends('layouts.master')
 
 @section('custom_css')
 
@@ -10,8 +10,8 @@
 
 @endsection
 
-@section('content') 
-    
+@section('content')
+
                 <div class="page-breadcrumbs">
                     <ul class="breadcrumb">
                         <li>
@@ -52,19 +52,20 @@
                                         </a>
                                     </div>
                                 @endif
-                                   
+
                                     <table class="table table-striped table-hover table-bordered" id="sample_1">
                                         <thead>
                                             <tr role="row">
                                                 <th>Topic</th>
+                                                <th>Teacher Name</th>
                                                 <th>Start Time</th>
                                                 <th>Duration(Minute)</th>
+                                                <th>Meeting ID</th>
+                                                <th>Meeting Password</th>
                                                 <th>Course Title</th>
                                                 <th>Course Code</th>
                                                 <th>Session</th>
-                                                 @if (!is_null(Auth::user()) &&  (Auth::user()->can('edit-online-class') || Auth::user()->can('delete-online-class')))
                                                 <th> Action </th>
-                                                 @endif 
                                             </tr>
                                         </thead>
 
@@ -75,14 +76,16 @@
                                         @foreach($zoom_online_class as $category)
                                             <tr>
                                                 <td>{{$category->topic}}</td>
+                                                <td>{{$category->user->username}}</td>
                                                 <td>{{$category->start_time}}</td>
                                                 <td>{{$category->duration}}</td>
+                                                <td>{{$category->meeting_id}}</td>
+                                                <td>{{$category->meeting_password}}</td>
                                                 <td>{{$category->course_code}}</td>
                                                 <td>{{$category->course_title}}</td>
                                                 <td>{{$category->year_session}}</td>
-
-                                                @if (!is_null(Auth::user()) && (Auth::user()->can('edit-online-class') || Auth::user()->can('delete-online-class')))
                                                 <td>
+                                                    <a href="{{$category->join_url}}" target="_blank" class="btn btn-info btn-xs edit"><i class="fa fa-video-camera"></i> zoom </a>
                                                     @if (!is_null(Auth::user()) &&  Auth::user()->can('edit-online-class'))
                                                     <a href="{{route('edit-online-class',$category->id)}}" class="btn btn-info btn-xs edit"><i class="fa fa-edit"></i> Edit</a>
                                                     @endif
@@ -90,8 +93,6 @@
                                                     <a href="{{route('delete-online-class',$category->id)}}" onclick="return confirm('Are you sure to delete')" class="btn btn-danger btn-xs delete"><i class="fa fa-trash-o"></i> Delete</a>
                                                     @endif
                                                 </td>
-                                                @endif
-
                                             </tr>
                                             @endforeach
                                         </tbody>
@@ -100,13 +101,13 @@
                             </div>
                         </div>
                     </div>
-           
-                    
+
+
      @endsection
 
-@section('custom_js') 
+@section('custom_js')
 
 
-   
 
- @endsection 
+
+ @endsection
