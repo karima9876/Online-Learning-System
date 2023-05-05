@@ -17,6 +17,7 @@
         "laravel/socialite": "^5.2",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^2.5",
+        "macsidigital/laravel-zoom": "^5.0",
         "mews/captcha": "^3.2",
         "spatie/laravel-permission": "^4.2"
     },
