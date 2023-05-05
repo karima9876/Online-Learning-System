@@ -186,6 +186,12 @@ class RolePermissionSeeder extends Seeder
                                 ]
                             ],
                             [
+                                'group_name'=> 'Payment',
+                                'permissions'=>[
+                                    'paymentlist',
+                                ]
+                            ],
+                            [
                                 'group_name'=> 'Zoom Online Class',
                                 'permissions'=>[
                                     'add-online-class',
@@ -194,6 +200,17 @@ class RolePermissionSeeder extends Seeder
                                     'edit-online-class',
                                     'update-online-class',
                                     'delete-online-class',
+                                ]
+                            ],
+                            [
+                                'group_name'=> 'Assignment',
+                                'permissions'=>[
+                                    'add-assignment',
+                                    'save-assignment',
+                                    'list-assignment',
+                                    'upload-assignment',
+                                    'save-upload-assignment',
+                                    'upload-assignment-list',
                                 ]
                             ],
                

@@ -255,6 +255,53 @@
                    
                     @endif
 
+                    @if (!is_null(Auth::user()) &&  (Auth::user()->can('add-assignment') || Auth::user()->can('list-assignment') || Auth::user()->can('upload-assignment') ||  Auth::user()->can('upload-assignment-list')))
+
+                    <li class="{{ Route::is('add-assignment') || Route::is('list-assignment') || Route::is('upload-assignment') || Route::is('upload-assignment-list') ? 'active open' : '' }}">
+                        <a href="#" class="menu-dropdown">
+                            <i class="menu-icon fa fa-tasks"></i>
+                            <span class="menu-text"> Assignnment </span>
+                            
+
+                            <i class="menu-expand"></i>
+                        </a>
+
+                        <ul class="submenu"> 
+                            
+                         @if($user->can('add-assignment'))
+
+                        <li class="{{ Route::is('add-assignment') ? 'active' : '' }}">
+                                <a href="{{url('/add-assignment')}}">
+                                    <span class="menu-text">Assignment Create</span>
+                                </a>
+                            </li>
+                        @endif
+                        @if($user->can('list-assignment'))
+
+                        <li class="{{ Route::is('list-assignment') ? 'active' : '' }}">
+                                <a href="{{url('/list-assignment')}}">
+                                    <span class="menu-text">Assignment Create List</span>
+                                </a>
+                            </li>
+                        @endif
+                        @if($user->can('upload-assignment'))
+                            <li class="{{ Route::is('upload-assignment') ? 'active' : '' }}">
+                                <a href="{{url('/upload-assignment')}}">
+                                    <span class="menu-text">Assignment Submission</span>
+                                </a>
+                            </li>
+                        @endif
+                        @if($user->can('upload-assignment-list'))
+                            <li class="{{ Route::is('upload-assignment-list') ? 'active' : '' }}">
+                                <a href="{{url('/upload-assignment-list')}}">
+                                    <span class="menu-text">Assignment Submission List</span>
+                                </a>
+                            </li>
+                        @endif
+                        </ul>
+                    </li>
+                    @endif
+
                    <li class="{{ Route::is('studentlist') ? 'active open' : '' }}">
                     <a href="" class="menu-dropdown">
                         <i class="menu-icon fa fa-money"></i>
