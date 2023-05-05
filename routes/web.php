@@ -168,7 +168,7 @@ Route::post('/save-online-class', [OnlineClassController::class, 'saveOnlineClas
 Route::get('/list-online-class', [OnlineClassController::class, 'listOnlineClass'])->name('list-online-class');
 
 Route::get('/edit-online-class/{onlineclass_id}', [OnlineClassController::class, 'editOnlineClass'])->name('edit-online-class');
-Route::get('/update-online-class/{onlineclass_id}', [OnlineClassController::class, 'updateOnlineClass'])->name('update-online-class');
+Route::post('/update-online-class/{onlineclass_id}', [OnlineClassController::class, 'updateOnlineClass'])->name('update-online-class');
 Route::get('/delete-online-class/{onlineclass_id}', [OnlineClassController::class, 'deleteOnlineClass'])->name('delete-online-class');
 
 //assignment
