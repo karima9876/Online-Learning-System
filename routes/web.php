@@ -170,3 +170,12 @@ Route::get('/list-online-class', [OnlineClassController::class, 'listOnlineClass
 Route::get('/edit-online-class/{onlineclass_id}', [OnlineClassController::class, 'editOnlineClass'])->name('edit-online-class');
 Route::get('/update-online-class/{onlineclass_id}', [OnlineClassController::class, 'updateOnlineClass'])->name('update-online-class');
 Route::get('/delete-online-class/{onlineclass_id}', [OnlineClassController::class, 'deleteOnlineClass'])->name('delete-online-class');
+
+//assignment
+Route::get('/add-assignment', [AssignmentController::class, 'addAssignment'])->name('add-assignment');
+Route::post('/save-assignment', [AssignmentController::class, 'saveAssignment'])->name('save-assignment');
+Route::get('/list-assignment', [AssignmentController::class, 'listAssignment'])->name('list-assignment');
+
+Route::get('/upload-assignment', [AssignmentController::class, 'uploadAssignment'])->name('upload-assignment');
+Route::post('/save-upload-assignment', [AssignmentController::class, 'saveUploadAssignment'])->name('save-upload-assignment');
+Route::get('/upload-assignment-list', [AssignmentController::class, 'uploadAssignmentList'])->name('upload-assignment-list');
