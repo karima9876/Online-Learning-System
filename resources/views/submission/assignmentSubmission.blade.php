@@ -17,7 +17,7 @@
                 <a href="{{ URL::to('/') }}">Dashboard</a>
             </li>
             <li>
-                <a href="#">Add Online Class</a>
+                <a href="#">Assignment Submission</a>
             </li>
 
         </ul>
@@ -27,7 +27,7 @@
             <div class="col-lg-10 col-sm-10 col-xs-12">
                 <div class="widget">
                     <div class="widget-header ">
-                        <span class="widget-caption">Add Online Class Form</span>
+                        <span class="widget-caption">Assignment Submission Form</span>
                         <div class="widget-buttons">
                             <a href="#" data-toggle="maximize">
                                 <i class="fa fa-expand"></i>
@@ -42,16 +42,13 @@
                     </div>
                     <div class="widget-body">
                         <div style="text-align: right" class="table-toolbar">
-                            <a href="{{url('/list-online-class')}}" class="btn btn-default">
-                                Online Class List
-                            </a>
                         </div>
-                        <form action="{{url('save-online-class')}}" method="POST" class="form-horizontal bv-form" enctype="multipart/form-data"  novalidate="novalidate">
+                        <form action="{{route('save-upload-assignment',$category->id)}}" method="POST" class="form-horizontal bv-form" enctype="multipart/form-data"  novalidate="novalidate">
                             @csrf
                             <div class="form-group {{ $errors->has('topic') ? ' has-error' : '' }} has-feedback">
                                 <label class="col-lg-4 control-label">Topic<span class="red">*</span>:</label>
                                 <div class="col-lg-8">
-                                    <input type="text" name="topic" autocomplete="off" value="" placeholder="Enter Topic Name" class="form-control input-inline input-medium">
+                                    <input type="text" name="topic" autocomplete="off" value="{{$category->topic}}" placeholder="Enter Topic Name" class="form-control input-inline input-medium" disabled>
                                     @if ($errors->has('topic'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('topic') }}</strong>
@@ -61,38 +58,9 @@
                             </div>
 
                             <div class="form-group has-feedback">
-                                <label class="col-lg-4 control-label">Start Time<span class="red">*</span>:</label>
-                                <div class="col-lg-4">
-                                    <div class ='input-group date' id='datetimepicker'>
-                                        <input autocomplete="off" type="text"  class="form-control" name="start_time" id="start_time">
-                                        <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-calendar"></span>
-                                        </span>
-                                        @if($errors->has('start_time'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('start_time') }}</strong>
-                                            </span>
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group has-feedback">
-                                <label class="col-lg-4 control-label">Duration(Minute)<span class="red">*</span>:</label>
-                                <div class="col-lg-8 ">
-                                    <input type="number" name="duration" autocomplete="off" value="" placeholder="Enter Duration" class="form-control input-inline input-medium">
-                                    @if ($errors->has('duration'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('duration') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="form-group has-feedback">
                                 <label class="col-lg-4 control-label">Course Code<span class="red">*</span>:</label>
                                 <div class="col-lg-8 ">
-                                    <input type="text" name="course_code" value="" placeholder="Enter course code" class="form-control input-inline input-medium">
+                                    <input type="text" name="course_code" value="{{$category->course_code}}" placeholder="Enter course code" class="form-control input-inline input-medium" disabled>
                                     @if($errors->has('course_code'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('course_code') }}</strong>
@@ -104,10 +72,10 @@
                             <div class="form-group has-feedback">
                                 <label class="col-lg-4 control-label">Course Title<span class="red">*</span>:</label>
                                 <div class="col-lg-8 ">
-                                    <select class="form-control input-inline input-medium" type="text" name="course_title">
-                                        @foreach($categories as $category)
-                                            <option value="{{$category->id}}">{{$category->categoryname}}</option>
-                                        @endforeach
+                                    <select class="form-control input-inline input-medium" type="text" name="course_title" disabled>
+                                    @foreach($categories as $category_single)
+                                        <option @if($category->category_id == $category_single->id) selected  @endif value="{{$category_single->id}}">{{$category_single->categoryname}}</option>
+                                    @endforeach  
                                     </select>
                                     @if ($errors->has('course_title'))
                                         <span class="help-block">
@@ -116,11 +84,10 @@
                                     @endif
                                 </div>
                             </div>
-
                             <div class="form-group has-feedback">
                                 <label class="col-lg-4 control-label">Session<span class="red">*</span>:</label>
                                 <div class="col-lg-8 ">
-                                    <input type="text" name="year_session" value="" placeholder="Enter  Session" class="form-control input-inline input-medium">
+                                    <input type="text" name="year_session" value="{{$category->year_session}}" placeholder="Enter  Session" class="form-control input-inline input-medium" disabled>
                                     @if ($errors->has('year_session'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('year_session') }}</strong>
@@ -129,9 +96,33 @@
                                 </div>
                             </div>
 
+                            <div class="form-group {{ $errors->has('description') ? ' has-error' : '' }} has-feedback">
+                                <label class="col-lg-4 control-label">Description<span class="red">*</span>:</label>
+                                <div class="col-lg-8">
+                                    <textarea type="text" name="description" autocomplete="off" value="" placeholder="Enter Description" class="form-control input-inline input-medium"> </textarea>
+                                    @if ($errors->has('description'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('description') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group has-feedback">
+                                <label class="col-lg-4 control-label">Upload File<span class="red">*</span>:</label>
+                                <div class="col-lg-8 ">
+                                    <input type="file" name="upload_file" value="" placeholder="Enter File" class="form-control input-inline input-medium">
+                                    @if ($errors->has('upload_file'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('upload_file') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+
                             <div class="form-group has-feedback">
                                 <div class="col-md-offset-5 col-md-6" style="margin-top:10px">
-                                    <button type="submit" class="btn btn-primary">Create</button>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
                                     <button type="reset" class="btn btn-danger reset">Cancel</button>
                                 </div>
                             </div>
@@ -155,5 +146,3 @@
 </script>
     
 @endsection
-   
-    

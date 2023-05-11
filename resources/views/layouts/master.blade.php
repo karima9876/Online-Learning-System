@@ -180,13 +180,6 @@
                     
                    
                     <!--Databoxes-->
-                    <li class="{{ Route::is('addQuestion') ? 'active' : '' }}">
-                        <a href="{{url('/questionsAdd')}}">
-                            <i class=" menu-icon glyphicon glyphicon-question-sign"></i>
-
-                            <span class="menu-text"> Ask Question </span>
-                        </a>
-                    </li>
                     
                     @if (!is_null(Auth::user()) &&  (Auth::user()->can('adduser') || Auth::user()->can('userlist')))
                     
@@ -221,6 +214,61 @@
                     </li>
                    
                    @endif
+                   @if (!is_null(Auth::user()) &&  (Auth::user()->can('addpuser') || Auth::user()->can('puserlist')))
+                   
+                        <li class="{{ Route::is('addpuser') || Route::is('puserlist') ? 'active open' : '' }}">
+                        <a href="#" class="menu-dropdown">
+                            <i class="menu-icon glyphicon glyphicon-user"></i>
+                            <span class="menu-text">Primary Student </span>
+                           
+
+                            <i class="menu-expand"></i>
+                        </a>
+
+                        <ul class="submenu">
+                        @if($user->can('addpuser'))
+                        <li class="{{ Route::is('addpuser') ? 'active' : '' }}">
+                                <a href="{{url('/addpuser')}}">
+                                    <span class="menu-text">Add  Primary Student</span>
+                                </a>
+                            </li>
+                            @endif
+                            @if($user->can('puserlist'))
+                            <li class="{{ Route::is('puserlist') ? 'active' : '' }}">
+                                <a href="{{url('/puserlist')}}">
+                                    <span class="menu-text">Student Primary List</span>
+                                </a>
+                            </li>
+                            @endif
+                        </ul>
+                    </li>
+                
+                    @endif
+
+                    <li  class="{{ Route::is('addcategory') || Route::is('categoryList') ? 'active open' : '' }}">
+                        <a href="" class="menu-dropdown">
+                            <i class="menu-icon glyphicon glyphicon-tasks"></i>
+                            <span class="menu-text">Category </span>
+                           
+
+                            <i class="menu-expand"></i>
+                        </a>
+
+                        <ul class="submenu">
+                        @if (!is_null(Auth::user()) &&  Auth::user()->can('addcategory'))
+                        <li class="{{ Route::is('addcategory') ? 'active' : '' }}">
+                                <a href="{{url('/addcategory')}}" active>
+                                    <span class="menu-text">Add Category</span>
+                                </a>
+                            </li>
+                            @endif
+                            <li class="{{ Route::is('categoryList') ? 'active' : '' }}">
+                                <a href="{{url('/categoryList')}}">
+                                    <span class="menu-text">Category List</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
 
                     @if (!is_null(Auth::user()) &&  (Auth::user()->can('add-online-class') || Auth::user()->can('list-online-class')))
                     
@@ -255,9 +303,9 @@
                    
                     @endif
 
-                    @if (!is_null(Auth::user()) &&  (Auth::user()->can('add-assignment') || Auth::user()->can('list-assignment') || Auth::user()->can('upload-assignment') ||  Auth::user()->can('upload-assignment-list')))
+                    @if (!is_null(Auth::user()) &&  (Auth::user()->can('add-assignment') || Auth::user()->can('list-assignment')))
 
-                    <li class="{{ Route::is('add-assignment') || Route::is('list-assignment') || Route::is('upload-assignment') || Route::is('upload-assignment-list') ? 'active open' : '' }}">
+                    <li class="{{ Route::is('add-assignment') || Route::is('list-assignment')  ? 'active open' : '' }}">
                         <a href="#" class="menu-dropdown">
                             <i class="menu-icon fa fa-tasks"></i>
                             <span class="menu-text"> Assignnment </span>
@@ -284,7 +332,7 @@
                                 </a>
                             </li>
                         @endif
-                        @if($user->can('upload-assignment'))
+                        {{-- @if($user->can('upload-assignment'))
                             <li class="{{ Route::is('upload-assignment') ? 'active' : '' }}">
                                 <a href="{{url('/upload-assignment')}}">
                                     <span class="menu-text">Assignment Submission</span>
@@ -297,7 +345,7 @@
                                     <span class="menu-text">Assignment Submission List</span>
                                 </a>
                             </li>
-                        @endif
+                        @endif --}}
                         </ul>
                     </li>
                     @endif
@@ -337,51 +385,7 @@
                         </ul>
                     </li>
                @endif
-                  
-                        <li  class="{{ Route::is('addcategory') || Route::is('categoryList') ? 'active open' : '' }}">
-                        <a href="" class="menu-dropdown">
-                            <i class="menu-icon glyphicon glyphicon-tasks"></i>
-                            <span class="menu-text"> Category </span>
-                           
-
-                            <i class="menu-expand"></i>
-                        </a>
-
-                        <ul class="submenu">
-                        @if (!is_null(Auth::user()) &&  Auth::user()->can('addcategory'))
-                        <li class="{{ Route::is('addcategory') ? 'active' : '' }}">
-                                <a href="{{url('/addcategory')}}" active>
-                                    <span class="menu-text">Add Category</span>
-                                </a>
-                            </li>
-                            @endif
-                            <li class="{{ Route::is('categoryList') ? 'active' : '' }}">
-                                <a href="{{url('/categoryList')}}">
-                                    <span class="menu-text">Category List</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                  
-                   
-                    <li class="{{ Route::is('ratings') ? 'active' : '' }}">
-                        <a href="{{url('ratings')}}">
-                            <i class=" menu-icon glyphicon glyphicon-star-empty"></i>
-
-                            <span class="menu-text"> Rating </span>
-                        </a>
-                    </li>
-                   
-                    @if (!is_null(Auth::user()) &&  Auth::user()->can('messages'))
-                    <li class="{{ Route::is('messages') ? 'active' : '' }}">
-                        <a href="{{url('messages')}}">
-                            <i class="menu-icon fa fa-envelope-o"></i>
-                            <span class="menu-text">Message</span>
-                        </a>
-                    </li>
-                    @endif
-                   
-                    <!-- Roles  -->
+                <!-- Roles  -->
                     
                 @if (!is_null(Auth::user()) &&  (Auth::user()->can('roles.index') || Auth::user()->can('roles.create')))
                 <li class="{{ Route::is('roles.index') || Route::is('roles.create') || Route::is('roles.edit') ? 'active open' : '' }}">
@@ -412,9 +416,17 @@
                          @endif
                   
                  </ul>
-             </li>
-             @endif 
-            
+                </li>
+                @endif 
+                  
+               <li class="{{ Route::is('addQuestion') ? 'active' : '' }}">
+                <a href="{{url('/questionsAdd')}}">
+                    <i class=" menu-icon glyphicon glyphicon-question-sign"></i>
+
+                    <span class="menu-text"> Ask Question </span>
+                </a>
+            </li>
+                    
                     @if (!is_null(Auth::user()) &&  (Auth::user()->can('answer_reportList') || Auth::user()->can('question_reportList')))
                     
                     <li
@@ -450,7 +462,21 @@
                    @endif
 
 
+                   <li class="{{ Route::is('ratings') ? 'active' : '' }}">
+                    <a href="{{url('ratings')}}">
+                        <i class=" menu-icon glyphicon glyphicon-star-empty"></i>
 
+                        <span class="menu-text"> Rating </span>
+                    </a>
+                </li>
+                @if (!is_null(Auth::user()) &&  Auth::user()->can('messages'))
+                <li class="{{ Route::is('messages') ? 'active' : '' }}">
+                    <a href="{{url('messages')}}">
+                        <i class="menu-icon fa fa-envelope-o"></i>
+                        <span class="menu-text">Message</span>
+                    </a>
+                </li>
+                @endif
             
                @if (!is_null(Auth::user()) &&  Auth::user()->can('ex_import'))
                
@@ -461,36 +487,6 @@
                         </a>
                     </li>
                  
-                    @endif
-                    @if (!is_null(Auth::user()) &&  (Auth::user()->can('addpuser') || Auth::user()->can('puserlist')))
-                   
-                        <li class="{{ Route::is('addpuser') || Route::is('puserlist') ? 'active open' : '' }}">
-                        <a href="#" class="menu-dropdown">
-                            <i class="menu-icon glyphicon glyphicon-user"></i>
-                            <span class="menu-text">Primary Student </span>
-                           
-
-                            <i class="menu-expand"></i>
-                        </a>
-
-                        <ul class="submenu">
-                        @if($user->can('addpuser'))
-                        <li class="{{ Route::is('addpuser') ? 'active' : '' }}">
-                                <a href="{{url('/addpuser')}}">
-                                    <span class="menu-text">Add  Primary Student</span>
-                                </a>
-                            </li>
-                            @endif
-                            @if($user->can('puserlist'))
-                            <li class="{{ Route::is('puserlist') ? 'active' : '' }}">
-                                <a href="{{url('/puserlist')}}">
-                                    <span class="menu-text">Student Primary List</span>
-                                </a>
-                            </li>
-                            @endif
-                        </ul>
-                    </li>
-                
                     @endif
                 </ul>
             </div>

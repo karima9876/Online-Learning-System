@@ -17,7 +17,7 @@
                 <a href="{{ URL::to('/') }}">Dashboard</a>
             </li>
             <li>
-                <a href="#">Add Online Class</a>
+                <a href="#">Add Assignment</a>
             </li>
 
         </ul>
@@ -27,7 +27,7 @@
             <div class="col-lg-10 col-sm-10 col-xs-12">
                 <div class="widget">
                     <div class="widget-header ">
-                        <span class="widget-caption">Add Online Class Form</span>
+                        <span class="widget-caption">Add Assignment Form</span>
                         <div class="widget-buttons">
                             <a href="#" data-toggle="maximize">
                                 <i class="fa fa-expand"></i>
@@ -42,11 +42,11 @@
                     </div>
                     <div class="widget-body">
                         <div style="text-align: right" class="table-toolbar">
-                            <a href="{{url('/list-online-class')}}" class="btn btn-default">
-                                Online Class List
+                            <a href="{{url('/list-assignment')}}" class="btn btn-default">
+                                All Assignment List
                             </a>
                         </div>
-                        <form action="{{url('save-online-class')}}" method="POST" class="form-horizontal bv-form" enctype="multipart/form-data"  novalidate="novalidate">
+                        <form action="{{url('save-assignment')}}" method="POST" class="form-horizontal bv-form" enctype="multipart/form-data"  novalidate="novalidate">
                             @csrf
                             <div class="form-group {{ $errors->has('topic') ? ' has-error' : '' }} has-feedback">
                                 <label class="col-lg-4 control-label">Topic<span class="red">*</span>:</label>
@@ -59,35 +59,37 @@
                                     @endif
                                 </div>
                             </div>
-
-                            <div class="form-group has-feedback">
-                                <label class="col-lg-4 control-label">Start Time<span class="red">*</span>:</label>
-                                <div class="col-lg-4">
-                                    <div class ='input-group date' id='datetimepicker'>
-                                        <input autocomplete="off" type="text"  class="form-control" name="start_time" id="start_time">
-                                        <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-calendar"></span>
-                                        </span>
-                                        @if($errors->has('start_time'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('start_time') }}</strong>
-                                            </span>
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group has-feedback">
-                                <label class="col-lg-4 control-label">Duration(Minute)<span class="red">*</span>:</label>
-                                <div class="col-lg-8 ">
-                                    <input type="number" name="duration" autocomplete="off" value="" placeholder="Enter Duration" class="form-control input-inline input-medium">
-                                    @if ($errors->has('duration'))
+                            <div class="form-group {{ $errors->has('description') ? ' has-error' : '' }} has-feedback">
+                                <label class="col-lg-4 control-label">Description<span class="red">*</span>:</label>
+                                <div class="col-lg-8">
+                                    <textarea type="text" name="description" autocomplete="off" value="" placeholder="Enter Description" class="form-control input-inline input-medium"></textarea>
+                                    @if ($errors->has('description'))
                                         <span class="help-block">
-                                            <strong>{{ $errors->first('duration') }}</strong>
+                                            <strong>{{ $errors->first('description') }}</strong>
                                         </span>
                                     @endif
                                 </div>
                             </div>
+
+                            {{-- <div  class="form-group has-feedback">
+                                <label class="col-lg-4 control-label"> Description <span class="red">*</span> : </label>
+                                <div  class="col-lg-8">  
+                                        <div   class="widget-header bordered-bottom bordered-themeprimary">
+                                            <div class="widget-buttons">
+                                                <a href="#" data-toggle="maximize">
+                                                    <i class="fa fa-expand"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    <div  class="widget-main no-padding">             
+                                    <textarea  id="summernote" name="description">
+                                       @if(!empty($questions->description)) {{$questions->description}} @else {{old('description')}} @endif
+                                   </textarea>                                                     
+                                    </div>         
+                                </div>                                           
+                            </div>  --}}
+
+                            
 
                             <div class="form-group has-feedback">
                                 <label class="col-lg-4 control-label">Course Code<span class="red">*</span>:</label>
@@ -116,7 +118,6 @@
                                     @endif
                                 </div>
                             </div>
-
                             <div class="form-group has-feedback">
                                 <label class="col-lg-4 control-label">Session<span class="red">*</span>:</label>
                                 <div class="col-lg-8 ">
@@ -129,6 +130,22 @@
                                 </div>
                             </div>
 
+                            <div class="form-group has-feedback">
+                                <label class="col-lg-4 control-label">End Time<span class="red">*</span>:</label>
+                                <div class="col-lg-4">
+                                    <div class ='input-group date' id='datetimepicker'>
+                                        <input autocomplete="off" type="text"  class="form-control" name="end_time" id="end_time">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                        @if($errors->has('end_time'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('end_time') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
                             <div class="form-group has-feedback">
                                 <div class="col-md-offset-5 col-md-6" style="margin-top:10px">
                                     <button type="submit" class="btn btn-primary">Create</button>
@@ -155,5 +172,3 @@
 </script>
     
 @endsection
-   
-    
