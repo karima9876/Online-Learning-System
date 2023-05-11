@@ -194,7 +194,10 @@ class OnlineClassController extends Controller
     }
 
     public function listOnlineClass(){
-
+        if (is_null($this->user) ||  !$this->user->can('list-online-class')) {
+            $message = 'You are not allowed to access this page !';
+            return view('errors.403', compact('message'));
+        }
         $zoom_online_class =ZoomOnlineClass::orderBy('id','DESC')->with('user')->get();
         return view('zoom_online_class.list-online-class',compact('zoom_online_class'));
     }

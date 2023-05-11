@@ -19,6 +19,8 @@ use App\Http\Controllers\DonateController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\SslCommerzPaymentController;
 use App\Http\Controllers\OnlineClassController;
+use App\Http\Controllers\AssignmentController;
+use App\Http\Controllers\SubmissionController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -171,11 +173,16 @@ Route::get('/edit-online-class/{onlineclass_id}', [OnlineClassController::class,
 Route::post('/update-online-class/{onlineclass_id}', [OnlineClassController::class, 'updateOnlineClass'])->name('update-online-class');
 Route::get('/delete-online-class/{onlineclass_id}', [OnlineClassController::class, 'deleteOnlineClass'])->name('delete-online-class');
 
-//assignment
+//assignment creation
 Route::get('/add-assignment', [AssignmentController::class, 'addAssignment'])->name('add-assignment');
 Route::post('/save-assignment', [AssignmentController::class, 'saveAssignment'])->name('save-assignment');
 Route::get('/list-assignment', [AssignmentController::class, 'listAssignment'])->name('list-assignment');
+Route::get('/edit-assignment/{assignment_id}', [AssignmentController::class, 'editAssignment'])->name('edit-assignment');
+Route::post('/update-assignment/{assignment_id}', [AssignmentController::class, 'updateAssignment'])->name('update-assignment');
+Route::get('/delete-assignment/{assignment_id}', [AssignmentController::class, 'deleteAssignment'])->name('delete-assignment');
 
-Route::get('/upload-assignment', [AssignmentController::class, 'uploadAssignment'])->name('upload-assignment');
-Route::post('/save-upload-assignment', [AssignmentController::class, 'saveUploadAssignment'])->name('save-upload-assignment');
-Route::get('/upload-assignment-list', [AssignmentController::class, 'uploadAssignmentList'])->name('upload-assignment-list');
+//assignment submission
+Route::get('/upload-assignment/{assignment_id}', [SubmissionController::class, 'uploadAssignment'])->name('upload-assignment');
+Route::post('/save-upload-assignment/{assignment_id}', [SubmissionController::class, 'saveUploadAssignment'])->name('save-upload-assignment');
+Route::get('/upload-assignment-list/{assignment_id}', [SubmissionController::class, 'uploadAssignmentList'])->name('upload-assignment-list');
+Route::get('/upload-assignment-delete/{assignment_id}', [SubmissionController::class, 'deleteuploadAssignmentList'])->name('upload-assignment-delete');

@@ -208,9 +208,13 @@ class RolePermissionSeeder extends Seeder
                                     'add-assignment',
                                     'save-assignment',
                                     'list-assignment',
+                                    'edit-assignment',
+                                    'update-assignment',
+                                    'delete-assignment',
                                     'upload-assignment',
                                     'save-upload-assignment',
                                     'upload-assignment-list',
+                                    'upload-assignment-delete',
                                 ]
                             ],
                

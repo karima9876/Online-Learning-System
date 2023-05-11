@@ -71,7 +71,8 @@
                                     </div>
                                     @if (!is_null(Auth::user()) &&  (Auth::user()->can('downLoadFile')))
                                     @if($alllist->ufile!=null)
-                                    <h5><a download="download" href="{{route('downLoadFile',encrypt($alllist->ufile))}}">---click Image/Pdf</a></h5>
+                                    {{-- <h5><a download="true" href="{{route('downLoadFile',encrypt($alllist->ufile))}}">---click Image/Pdf</a></h5> --}}
+                                    <h5><a download="true" href="{{Storage::url($alllist->ufile)}}">---click Image/Pdf</a></h5>
                                     @endif
                                     @endif
 
