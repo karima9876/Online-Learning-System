@@ -30,7 +30,11 @@ class SubmissionController extends Controller
         $data['categories'] = DB::table('categories')
             ->select('id','categoryname')
             ->get();
-        $data['category']=AssignmentCreate::findOrFail($assignment_id);
+        $data['category']=AssignmentCreate::where('id','=',$assignment_id)->whereDate('end_time', '>=', date('Y-m-d'))->first();
+        //dd($data['category']);
+        if(empty($date['category'])){
+            return redirect()->back()->with('error_message','Your submission date has been expired');
+        }
         return view('submission.assignmentSubmission', $data);
         
     }
