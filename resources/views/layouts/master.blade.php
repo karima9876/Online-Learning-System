@@ -4,7 +4,7 @@
 <!-- Head -->
 <head>
     <meta charset="utf-8" />
-    <title>Departmental_Issue</title>
+    <title>Online Learning System</title>
 
     <meta name="description" content="blank page" />
     <meta name="csrf-token" content="{{ csrf_token() }}">

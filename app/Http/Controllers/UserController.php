@@ -130,7 +130,7 @@ class UserController extends Controller
             $message = 'You are not allowed to access this page !';
             return view('errors.403', compact('message'));
        }
-        $users =User::orderBy('id','DESC')->get();  
+        $users =User::orderBy('id','ASC')->get();  
         return view('user.userlist',compact('users'));
     }
     //edit
